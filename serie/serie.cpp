@@ -16,7 +16,7 @@ int main() {
 				tot -= prec;
 				prec = tot;
 		}
-		else if(i<2)
+		else if(i==0)
 			prec = n;
 
 		tot += n;
