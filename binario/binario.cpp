@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int V[10], R[10], last0;
+    int V[10], R[10], first1;
 
     for (int i = 0; i < 10; i++)
     {
@@ -17,18 +17,16 @@ int main()
 
     for (int i = 0; i < 10; i++)
     {
-        last0 = 0;
-
         cout << V[i] << ":\t";
-        for (int k = 0; k < 10; k++)
+        for (int k = 0; k < 10 && V[i] != 0; k++)
         {
             R[k] = V[i] % 2;
             V[i] /= 2;
             if (V[i] == 0)
-                last0++;
+                first1 = k;
         }
 
-        for (int k = 10-last0; k >= 0; k--)
+        for (int k = first1; k >= 0; k--)
             cout << R[k];
         cout << endl;
     }
